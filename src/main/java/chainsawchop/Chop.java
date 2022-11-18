@@ -168,7 +168,7 @@ public class Chop {
         return chopRx(whitespace);
     }
 
-    Chop head() {
+    public Chop head() {
         Chop headchop = new Chop();
         headchop.orig = orig;
         headchop.hdStrtI = hdStrtI;
@@ -180,7 +180,7 @@ public class Chop {
         return headchop;
     }
 
-    Chop mid() {
+    public Chop mid() {
         Chop headchop = new Chop();
         headchop.orig = orig;
         headchop.hdStrtI = mdStrtI;
@@ -193,7 +193,7 @@ public class Chop {
 
     }
 
-    Chop tail() {
+    public Chop tail() {
         Chop headchop = new Chop();
         headchop.orig = orig;
         headchop.hdStrtI = tlStrtI;
@@ -205,15 +205,15 @@ public class Chop {
         return headchop;
     }
 
-    String getHead() {
+    public String getHead() {
         return StringUtils.substring(orig, hdStrtI, hdStopI);
     }
 
-    String getMid() {
+    public String getMid() {
         return StringUtils.substring(orig, mdStrtI, mdStopI);
     }
 
-    String getTail() {
+    public String getTail() {
         return StringUtils.substring(orig, tlStrtI, tlStopI);
     }
 
@@ -221,12 +221,12 @@ public class Chop {
     // so if you navigate using a sequence of chop head/mid/tails chained
     // to "navigate" to a chop point in a string, you can still get the
     // overall string head
-    String getHeadOriginal() {
+    public String getHeadOriginal() {
         return StringUtils.substring(orig, 0, mdStrtI);
     }
 
     // equivalent of getHeadOriginal() but the tail portion
-    String getTailOriginal() {
+    public String getTailOriginal() {
         return StringUtils.substring(orig, mdStopI);
     }
 
